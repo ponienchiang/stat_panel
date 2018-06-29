@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Probability Density: Normal Distribution</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jstat/latest/jstat.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <script src="scripts/jquery/jquery-1.4.4.min.js"></script>
+    <script src="scripts/jquery/jquery-ui-1.8.9.min.js"></script>
+</head>
+<body>
+<div style="width: 800px; position: absolute; left: 50%; margin-left: -400px">
+
+    <div style="text-align: center">
+        <em><a href="./index.html">home</a></em>
+        <p>
+        <strong>Tool For Normal Distribution</strong>
+         &nbsp;|&nbsp;
+
+        <a href="chi-squared.html">Chi-Squared Test</a> &nbsp;|&nbsp;
+
+        <a href="poisson-means.html">Count Data</a>
+        </p>
+    </div>
+
+        <div style="font-size: 24px; text-align: center">
+            <p><em>Question:</em> How many subjects are needed for an A/B test?</p>
+        </div>
+
+        <div style="padding: 10px 10px 20px 30px; margin: 10px 30px 10px 10px; border: 1px dotted black; font-size: 24px; position: relative">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td align="right" width="200" style="padding-right: 6px"><nobr>Average:</nobr></td>
+                        <td><input type="text" id="average" size="4"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" width="200" style="padding-right: 6px"><nobr>Standard Deviation:</nobr></td>
+                        <td><nobr><input type="text" id="std" size="4"></nobr></td>
+                    </tr>
+                    <tr>
+                        <td align="right" width="200" style="padding-right: 6px"><nobr>Score:</nobr></td>
+                        <td><nobr><input type="text" id="score" size="4"></nobr></td>
+                    </tr>
+                    <tr>
+                        <td align="right" width="200" style="padding-right: 6px"><nobr>Z:</nobr></td>
+                        <td><span id="z_score" size="4">1</span></td>
+                    </tr>
+                    <tr>
+                        <td align="right" width="200" style="padding-right: 6px">
+                            <nobr>P(X><span id="score_val">1</span>)=<span id="p_val"></span></nobr>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="verdict" style="text-align: center; padding: 30px 60px; font-size: 24px">
+            <em>Sample size:</em><br><span id="verdict_text">1,030</span><br><span style="font-size: 16px">per variation</span>
+        </div>
+         <h1>visualization of distribution</h1>
+        <div id="chartdiv" style="padding: 10px 10px 20px 30px; margin: 10px 30px 10px 10px; border: 1px dotted black; font-size: 24px; position: relative">
+        </div>
+    </div>
+
+<script src="./scripts/calculate.js"></script>
+<script src="./scripts/normal.js"></script>
+</body>
+
+
+</html>
